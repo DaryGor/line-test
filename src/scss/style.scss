@@ -1,0 +1,20 @@
+// download these files first
+@import "./global/fonts";
+@import "./global/variables";
+@import "./global/common";
+
+// libs
+@import "./lib/normalize";
+@import "./lib/locomotive-scroll";
+
+// settings and general styles
+@import "./global/mixins";
+
+// partials
+@import "./partials/header";
+@import "./partials/preloader";
+
+// sections
+@import "./sections/hero";
+@import "./sections/about";
+@import "./sections/skills";

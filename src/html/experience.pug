@@ -1,0 +1,23 @@
+ul.experience
+  h2.about__title(data-scroll data-scroll-speed="2")  Опыт работы
+  .experience__wrapper
+  - var firms = [{date:'Июль 2019', title:'Freelance Designer', icon:'@img/ex_1.svg', logo: null, named: null, location: 'Netherlands, Worldwide', text: 'Available for a project or job in UX/UI, Visual and Product design.', link_title_1:'Commercial tryouts', link_href_1:'#', link_title_2:'Personal projects', link_href_2:'#',}, {date:'Январь 2017 - Сентябрь 2018', title:'Digital Designer', icon:'@img/ex_2.svg', logo: '@img/logo_2.svg', named: 'J Creative Solutions', location: 'Digital agency in Minsk, Belarus', text: 'Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations for clients and indoor purposes.', link_title_1:'Agency projects', link_href_1:'#', link_title_2: null, link_href_2: null,}, {date:'Март 2014 - Февраль 2017', title:'SEO Specialist → Lead SEO Specialist', icon:'@img/ex_3.svg', logo: '@img/logo_3.svg', named: 'OZ.by', location: 'Online bookstore in Minsk, Belarus', text: 'Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.', link_title_1:'Annual company report 2016', link_href_1:'#', link_title_2: null, link_href_2: null,}, {date:'Август 2012 - Ноябрь 2013', title:'Content Specialist', icon:'@img/ex_4.svg', logo: '@img/logo_4.svg', named: '21vek.by', location: 'E-commerce store in Minsk, Belarus', text: 'Added and modified the product information, prepared images and text for the website, developed categories filters, ensure all info is correct in the catalogue with the goal of improving online shopper experience.', link_title_1:null, link_href_1:null, link_title_2: null, link_href_2: null,}, {date:'Август 2011 - Ноябрь 2014', title:'Software Support Engineer', icon:'@img/ex_5.svg', logo: '@img/logo_5.svg', named: 'Integral', location: 'Microelectronics factory in Minsk, Belarus', text: 'Supported retail accounting system LS Trade, troubleshoot technical problems.', link_title_1:null, link_href_1:null, link_title_2: null, link_href_2: null,}]
+    each firm in firms
+      li.experience__item(data-scroll data-scroll-speed="1")
+        span.experience__date= firm.date
+        .experience__header
+          span.experience__title= firm.title
+          img(src=firm.icon, alt="").experience__icon
+        .experience__naming
+          if firm.logo !== null
+            img(src=firm.logo, alt="").experience__logo
+          .experience__named
+            if firm.named !== null
+              span.experience__name= firm.named
+            span.experience__location= firm.location
+        .experience__description
+          p.experience__text= firm.text
+          a(href=firm.link_href_1).experience__link= firm.link_title_1
+          if firm.link_title_2 !== null
+          a(href=firm.link_href_2).experience__link= firm.link_title_2
+

@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="prefetch prerender" as="image" href="@img/loader.svg")
+    link(href="css/style.min.css" rel="stylesheet" type="text/css" )
+    title Тестовое задание
+  body
+    include html/header
+    main.main(data-scroll-container)
+      include html/preloader
+      include html/hero
+      include html/about
+      include html/skills
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=477a9795-7682-4439-ba5a-b57b6b01850a&lang=ru_RU&load=Geolink" type="text/javascript")
+    script(src="js/app.min.js")

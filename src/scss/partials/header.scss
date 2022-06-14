@@ -1,0 +1,156 @@
+.header {
+  grid-column-start: 4;
+
+  &__nav {
+    position: fixed;
+    right: 162px;
+    top: 100px;
+    z-index: 10;
+    transition: all .1s ease;
+
+    @media (max-width: 1180px) {
+      right: 20px;
+    }
+
+    @media (max-width: 1025px) {
+      width: 100%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      padding: 60px 40px;
+      opacity: 0;
+      visibility: hidden;
+      background-color: $bg;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @media (max-width: 1025px) {
+      display: block;
+      margin-left: 25px;
+      margin-top: 15px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 1025px) {
+      width: 100%;
+      flex-direction: column;
+      transition: all .3s ease;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    & + & {
+      margin-left: 33px;
+
+      @media (max-width: 1025px) {
+        margin-left: 0;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: 1025px) {
+      position: absolute;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+
+      &:checked + .header__nav {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__label {
+    position: fixed;
+    display: none;
+    top: 30px;
+    right: 20px;
+    width: 26px;
+    height: 2.5px;
+    background-color: $black;
+    z-index: 15;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 5.5px;
+      right: 0;
+      width: 25px;
+      height: 2px;
+      background-color: $black;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 11px;
+      right: 0;
+      width: 25px;
+      height: 2px;
+      background-color: $black;
+    }
+
+    @media (max-width: 1025px) {
+      display: block;
+    }
+
+    &--active {
+      transform: rotate(45deg);
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        transform: rotate(-90deg) translateY(0px) translateX(5px);
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: $black;
+    transition: all .2s ease;
+
+    &--active {
+      & + img {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      color: $angular;
+    }
+
+    @media (max-width: 1025px) {
+      font-size: 26px;
+      line-height: 31px;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    top: -50px;
+    right: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: all .2s ease
+  }
+}

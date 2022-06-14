@@ -1,0 +1,11 @@
+ul.education
+  h2.about__title.about__title--center(data-scroll data-scroll-speed="2")  Образование
+  .education__wrapper
+    - var universities = [{icon: '@img/ed_0.svg', title: 'Interface Design: Web & Mobile', text_1:'IT-Academy, 2020', text_2:''}, {icon: '@img/ed_1.svg', title: 'Fundamentals of Usability', text_1:'Skillshare, Oct 2018', text_2:''}, {icon: '@img/ed_2.svg', title: 'CG Artist', text_1:'Polygon CG School, May-Sep 2017', text_2:''}, {icon: '@img/ed_3.svg', title: 'Graphic Design', text_1:'Belarusian State Academy of Arts, 2015 - 2017 Postgraduate Diploma', text_2:''}, {icon: '@img/ed_4.svg', title: 'SEO Specialist', text_1:'ARTOX Media, \nJun-Aug 2012', text_2:''}, {icon: '@img/ed_5.svg', title: 'Information Technology Software', text_1:'Belarusian State University of Informatics and Radioelectronics, 2011 - 2015 Bachelor’s degree.', text_2: 'Polotsk State Economic College, 2007 - 2011 Associate’s degree'},]
+      each university in universities
+        li.education__item(data-scroll data-scroll-speed="1")
+          img(src=university.icon, alt="").education__icon
+          span.education__name= university.title
+          p.education__description= university.text_1
+          if university.text_2 !== ''
+            p.education__description= university.text_2

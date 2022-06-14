@@ -1,0 +1,34 @@
+@mixin title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1025px) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@mixin text-normal {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (max-width: 1025px) {
+    line-height: 17px;
+    letter-spacing: -0.01em;
+  }
+}
+
+@mixin text-bold {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (max-width: 1025px) {
+    line-height: 17px;
+    letter-spacing: -0.01em;
+  }
+}

@@ -1,0 +1,22 @@
+section.container.hero(data-scroll-section)
+  img(src="@img/decor_2.svg", alt="").hero__decor
+  .portrait.section#resume(data-scroll data-scroll-speed="1" data-scroll-target="#resume")
+    img(src="@img/portrait.svg", alt="Портрет кандидата").portrait__photo
+  .candidate(data-scroll data-scroll-speed="1.1")
+    h1.candidate__title Горнова Дарья, Frontend-developer
+    p.candidate__text Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь, что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение, наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках пользователя. Я считаю, что ориентированные на пользователя решения являются наиболее ценными цифровыми ресурсами будущего.
+
+  - var contacts = [{elem: 'gornova_work@mail.ru', href:'@mailto:gornova_work@mail.ru', class: ''}, {elem: '+7 (919) 490-03-04', href: "tel:+79194900304", class: ''}, {elem: 'г. Пермь', href: null, class:'ymaps-geolink'}]
+  ul.contacts(data-scroll data-scroll-speed="1")
+      each contact in contacts
+        li(class=`${contact.class}`).contacts__item= contact.elem
+          if contact.href !== null
+            a(href=contact.href).contacts__link
+
+  - var socials = [{icon: '@img/fb.svg', link: "#"}, {icon: '@img/vk.svg', link: "#"}, {icon: '@img/tg.svg', link: "#"}]
+  ul.social(data-scroll data-scroll-speed="1")
+      each social in socials
+        li.social__item
+          a.social__link(href=social.link)
+            img(src=social.icon, alt="")
+

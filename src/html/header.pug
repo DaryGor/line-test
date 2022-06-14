@@ -1,0 +1,12 @@
+header.header
+  - var nav = [{title:'Резюме', link: '#resume'}, {title:'О себе', link: '#about'}, {title:'Навыки', link: '#skills'}]
+  label(for="burger").header__label#label
+  input#burger(type="checkbox", name="").header__burger
+  nav.header__nav#nav
+    ul.header__list
+      each item in nav
+        li.header__item
+          a(href=item.link data-scroll-to).header__link= item.title
+          img(src="@img/decor_1.svg", alt="", class="header__decor")
+    img(src="@img/watch.svg", alt="", class="header__img")
+

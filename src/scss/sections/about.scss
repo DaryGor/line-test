@@ -1,0 +1,194 @@
+// Очищение нативных стилей Яндекс-метки
+.ymaps-geolink {
+  margin-left: 0 !important;
+
+  &::before,
+  &::after {
+    width: 0 !important;
+  }
+}
+
+.education {
+  grid-column: 4 / 5;
+
+  @media (max-width: 1025px) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 139px;
+
+    & > * {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-gap: 30px;
+
+    @media (max-width: 1025px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+  }
+
+  &__icon {
+    height: 44px;
+  }
+
+  &__name {
+    @include text-bold;
+    text-align: center;
+  }
+
+  &__description {
+    @include text-normal;
+    display: block;
+    width: 130px;
+    line-height: 150%;
+    text-align: center;
+  }
+}
+
+.about {
+  position: relative;
+  padding-bottom: 200px;
+
+  @media (max-width: 1025px) {
+    padding-bottom: 25px;
+  }
+
+  &__title {
+    @include title;
+
+    &--center {
+      text-align: center;
+
+      @media (max-width: 1025px) {
+        text-align: start;
+      }
+    }
+  }
+
+  &__man {
+    position: relative;
+    height: 100%;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+
+    @media (max-width: 1025px) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    transform: scale(1.13) translateY(25px);
+
+    @media (max-width: 1025px) {
+      position: relative;
+      display: block;
+      transform: none;
+      height: 200px;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: -230px;
+  }
+}
+
+.experience {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+
+  @media (max-width: 1025px) {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    & + & {
+      margin-top: 60px;
+
+      @media (max-width: 1025px) {
+        margin-top: 52px;
+      }
+    }
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $grey;
+  }
+
+  &__header,
+  &__naming,
+  &__named {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__named--column {
+    @media (max-width: 1025px) {
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+    }
+  }
+
+  &__title,
+  &__name {
+    @include text-bold;
+    line-height: 17px;
+  }
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__location,
+  &__text,
+  &__link {
+    @include text-normal;
+    line-height: 17px;
+  }
+
+  &__link {
+    color: $blue;
+    text-decoration-line: underline;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
